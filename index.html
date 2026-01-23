@@ -5,43 +5,31 @@
   <title>Maxine Arquitectos · Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* ====== IMPORTAR FUENTES ====== */
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap');
-
     /* ====== RESET BASICO ====== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #fff; color: #222; line-height: 1.6; font-family: 'Roboto', sans-serif; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+    body { background: #fff; color: #222; line-height: 1.5; }
 
     /* ====== HOME ====== */
     #home { text-align: center; padding: 50px 20px; }
     .logo { width: 150px; margin-bottom: 20px; }
-    h1 { font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 700; margin-bottom: 10px; }
-    .subtitle { font-size: 1.3rem; color: #555; margin-bottom: 40px; font-weight: 400; }
+    h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .subtitle { font-size: 1.2rem; color: #555; margin-bottom: 40px; }
 
     .clients-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .client-card { cursor: pointer; width: 200px; border: 1px solid #ddd; padding: 10px; border-radius: 10px; transition: transform 0.2s; font-family: 'Roboto', sans-serif; }
+    .client-card { cursor: pointer; width: 200px; border: 1px solid #ddd; padding: 10px; border-radius: 10px; transition: transform 0.2s; }
     .client-card:hover { transform: scale(1.05); }
     .client-card img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
 
     /* ====== PROYECTOS ====== */
     .project { padding: 50px 20px; border-top: 1px solid #eee; }
     .project-header { margin-bottom: 30px; text-align: center; }
-    .project-header h2 { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 5px; }
-    .role { color: #888; margin-bottom: 10px; font-weight: 500; }
+    .project-header h2 { font-size: 2rem; margin-bottom: 5px; }
+    .role { color: #888; margin-bottom: 10px; }
     .description { font-size: 1rem; color: #555; }
 
     .project-block { margin-bottom: 30px; }
-    .project-block h3 { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; margin-bottom: 10px; font-weight: 600; }
-
-    /* ====== IMAGENES PROPORCIONALES Y CENTRADAS ====== */
-    .project-block img {
-      width: 100%;          /* ocupa todo el ancho disponible del contenedor */
-      max-width: 600px;     /* nunca será más grande de 600px */
-      display: block;       /* para centrar */
-      margin: 0 auto;       /* centrado horizontal */
-      border-radius: 10px;  /* bordes redondeados */
-      height: auto;         /* mantiene la proporción */
-    }
+    .project-block h3 { font-size: 1.5rem; margin-bottom: 10px; }
+    .project-block img { width: 100%; border-radius: 10px; }
 
     /* ====== VIDEO RESPONSIVO ====== */
     .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; margin-top: 10px; border-radius: 10px; overflow: hidden; }
