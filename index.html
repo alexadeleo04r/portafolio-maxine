@@ -5,59 +5,66 @@
   <title>Maxine Arquitectos · Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* ====== FUENTES MODERNAS ====== */
+    /* ===== FUENTES ===== */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@500;600;700&display=swap');
 
-    /* ====== RESET ====== */
+    /* ===== RESET ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #fff; color: #222; line-height: 1.6; font-family: 'Inter', sans-serif; }
+    body { font-family: 'Inter', sans-serif; background: #fdfbf7; color: #222; line-height: 1.6; }
 
-    /* ====== HOME ====== */
-    #home { text-align: center; padding: 60px 20px; }
-    .logo { width: 140px; margin-bottom: 20px; }
-    h1 { font-family: 'Poppins', sans-serif; font-size: 3rem; font-weight: 700; margin-bottom: 10px; }
+    /* ===== HOME ===== */
+    #home { text-align: center; padding: 60px 20px; background: linear-gradient(120deg, #fefefe, #f0f0f0); }
+    .logo { width: 140px; margin-bottom: 20px; transition: transform 0.3s; }
+    .logo:hover { transform: rotate(-5deg) scale(1.05); }
+    h1 { font-family: 'Poppins', sans-serif; font-size: 3rem; font-weight: 700; margin-bottom: 10px; background: linear-gradient(90deg,#ff758c,#ff7eb3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .subtitle { font-size: 1.25rem; color: #555; margin-bottom: 50px; font-weight: 400; letter-spacing: 0.5px; }
 
-    .clients-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .client-card { cursor: pointer; width: 180px; border: 1px solid #ddd; padding: 12px; border-radius: 12px; transition: transform 0.25s, box-shadow 0.25s; background: #fafafa; }
-    .client-card:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-    .client-card img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
+    .clients-grid { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
+    .client-card {
+      cursor: pointer; width: 180px; padding: 12px; border-radius: 16px; 
+      background: #fff9f5; border: 1px solid #f0e8df;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    }
+    .client-card:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 35px rgba(0,0,0,0.12); background: #fff3e6; }
+    .client-card img { width: 100%; border-radius: 12px; margin-bottom: 10px; transition: transform 0.3s; }
+    .client-card img:hover { transform: scale(1.03); }
 
-    /* ====== PROYECTOS ====== */
-    .project { padding: 50px 20px; border-top: 1px solid #eee; }
+    /* ===== PROYECTOS ===== */
+    .project { padding: 50px 20px; border-top: 1px solid #eee; background: #fdfbf7; }
     .project-header { margin-bottom: 30px; text-align: center; }
-    .project-header h2 { font-family: 'Poppins', sans-serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 5px; }
+    .project-header h2 { font-family: 'Poppins', sans-serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 5px; color: #ff758c; transition: color 0.3s; }
+    .project-header h2:hover { color: #ff7eb3; }
     .role { color: #888; margin-bottom: 12px; font-weight: 500; letter-spacing: 0.5px; }
     .description { font-size: 1rem; color: #555; max-width: 700px; margin: 0 auto; }
 
-    .project-block { margin-bottom: 35px; }
-    .project-block h3 { font-family: 'Poppins', sans-serif; font-size: 1.55rem; margin-bottom: 12px; font-weight: 600; color: #333; }
+    .project-block { margin-bottom: 35px; transition: transform 0.3s; }
+    .project-block:hover { transform: translateY(-3px); }
+    .project-block h3 { font-family: 'Poppins', sans-serif; font-size: 1.55rem; margin-bottom: 12px; font-weight: 600; color: #ff758c; }
 
-    /* ====== IMAGENES PROPORCIONALES Y CENTRADAS ====== */
+    /* ===== IMAGENES PROPORCIONALES ===== */
     .project-block img {
       width: 100%;
-      max-width: 500px; /* MÁS PEQUEÑAS */
+      max-width: 480px; /* ligeramente más pequeñas */
       display: block;
       margin: 0 auto;
-      border-radius: 10px;
+      border-radius: 14px;
       height: auto;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
+    .project-block img:hover { transform: scale(1.02); box-shadow: 0 15px 25px rgba(0,0,0,0.1); }
 
-    /* ====== VIDEO RESPONSIVO ====== */
-    .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; margin-top: 10px; border-radius: 10px; overflow: hidden; }
+    /* ===== VIDEO RESPONSIVO ===== */
+    .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; margin-top: 10px; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
     .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-    /* ====== PIE DE PÁGINA ====== */
+    /* ===== PIE DE PAGINA ===== */
     footer {
-      text-align: center;
-      padding: 25px 20px;
-      border-top: 1px solid #eee;
-      color: #555;
-      font-size: 0.95rem;
-      font-family: 'Inter', sans-serif;
-      background: #f9f9f9;
+      text-align: center; padding: 25px 20px; border-top: 1px solid #eee; color: #555;
+      font-size: 0.95rem; font-family: 'Inter', sans-serif; background: #fff6f0;
       letter-spacing: 0.5px;
     }
+    footer a { color: #ff758c; text-decoration: none; transition: color 0.3s; }
+    footer a:hover { color: #ff7eb3; }
 
   </style>
 </head>
@@ -75,13 +82,11 @@
       <h2>Camila</h2>
       <p>Oficina Editorial</p>
     </div>
-
     <div class="client-card" onclick="scrollToProject('david')">
       <img src="david-hero.png" alt="Proyecto David">
       <h2>David</h2>
       <p>Centro de Comando</p>
     </div>
-
     <div class="client-card" onclick="scrollToProject('layla')">
       <img src="layla-hero.png" alt="Proyecto Layla">
       <h2>Layla</h2>
@@ -90,7 +95,7 @@
   </div>
 </section>
 
-<!-- PROYECTO CAMILA -->
+<!-- PROYECTOS -->
 <section id="camila" class="project">
   <header class="project-header">
     <h2>Camila</h2>
@@ -110,7 +115,6 @@
   </div>
 </section>
 
-<!-- PROYECTO DAVID -->
 <section id="david" class="project">
   <header class="project-header">
     <h2>David</h2>
@@ -130,7 +134,6 @@
   </div>
 </section>
 
-<!-- PROYECTO LAYLA -->
 <section id="layla" class="project">
   <header class="project-header">
     <h2>Layla</h2>
