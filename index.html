@@ -1,72 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Maxine Arquitectos · Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* ===== FUENTES ===== */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@500;600;700&display=swap');
+<meta charset="UTF-8">
+<title>Maxine Arquitectos · Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  /* ===== FUENTES DIVERTIDAS ===== */
+  @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Fredoka+One&display=swap');
 
-    /* ===== RESET ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #fdfbf7; color: #222; line-height: 1.6; }
+  /* ===== RESET ===== */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Comic Neue', sans-serif; background: #fefcfb; color: #222; line-height: 1.6; }
 
-    /* ===== HOME ===== */
-    #home { text-align: center; padding: 60px 20px; background: linear-gradient(120deg, #fefefe, #f0f0f0); }
-    .logo { width: 140px; margin-bottom: 20px; transition: transform 0.3s; }
-    .logo:hover { transform: rotate(-5deg) scale(1.05); }
-    h1 { font-family: 'Poppins', sans-serif; font-size: 3rem; font-weight: 700; margin-bottom: 10px; background: linear-gradient(90deg,#ff758c,#ff7eb3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .subtitle { font-size: 1.25rem; color: #555; margin-bottom: 50px; font-weight: 400; letter-spacing: 0.5px; }
+  /* ===== HOME ===== */
+  #home {
+    text-align: center; 
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #ffe1f0, #fff0c2);
+    position: relative;
+    overflow: hidden;
+  }
+  #home::after {
+    content:"";
+    position: absolute; 
+    width: 300px; height: 300px; 
+    background: rgba(255, 182, 193,0.3); 
+    border-radius: 50%; 
+    top: -50px; left: -50px; 
+    transform: rotate(45deg);
+  }
+  .logo { width: 140px; margin-bottom: 20px; transition: transform 0.5s; }
+  .logo:hover { transform: rotate(-15deg) scale(1.1); }
+  h1 { font-family: 'Fredoka One', cursive; font-size: 3rem; margin-bottom: 10px; color: #ff4d6d; text-shadow: 2px 2px #ffe5e0; }
+  .subtitle { font-size: 1.3rem; color: #555; margin-bottom: 50px; }
 
-    .clients-grid { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
-    .client-card {
-      cursor: pointer; width: 180px; padding: 12px; border-radius: 16px; 
-      background: #fff9f5; border: 1px solid #f0e8df;
-      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-    }
-    .client-card:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 35px rgba(0,0,0,0.12); background: #fff3e6; }
-    .client-card img { width: 100%; border-radius: 12px; margin-bottom: 10px; transition: transform 0.3s; }
-    .client-card img:hover { transform: scale(1.03); }
+  .clients-grid { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
+  .client-card {
+    cursor: pointer; width: 180px; padding: 12px; border-radius: 20px;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    border: 2px solid #ff9a76; transition: transform 0.4s, box-shadow 0.4s;
+  }
+  .client-card:hover { transform: rotate(-3deg) scale(1.08); box-shadow: 0 15px 35px rgba(255,105,180,0.35); }
+  .client-card img { width: 100%; border-radius: 16px; margin-bottom: 10px; transition: transform 0.4s; }
+  .client-card img:hover { transform: scale(1.05) rotate(-2deg); }
 
-    /* ===== PROYECTOS ===== */
-    .project { padding: 50px 20px; border-top: 1px solid #eee; background: #fdfbf7; }
-    .project-header { margin-bottom: 30px; text-align: center; }
-    .project-header h2 { font-family: 'Poppins', sans-serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 5px; color: #ff758c; transition: color 0.3s; }
-    .project-header h2:hover { color: #ff7eb3; }
-    .role { color: #888; margin-bottom: 12px; font-weight: 500; letter-spacing: 0.5px; }
-    .description { font-size: 1rem; color: #555; max-width: 700px; margin: 0 auto; }
+  /* ===== PROYECTOS ===== */
+  .project { padding: 50px 20px; border-top: 2px dashed #ff9a76; background: #fffaf4; position: relative; }
+  .project::before {
+    content:""; position: absolute; width: 200px; height: 200px; background: rgba(255, 255, 0,0.15);
+    border-radius: 50%; top: 20px; right: 20px; transform: rotate(30deg);
+  }
+  .project-header { margin-bottom: 30px; text-align: center; }
+  .project-header h2 { font-family: 'Fredoka One', cursive; font-size: 2.2rem; color: #ff6b6b; margin-bottom: 5px; transition: transform 0.3s; }
+  .project-header h2:hover { transform: scale(1.1) rotate(-2deg); color: #ff9a76; }
+  .role { color: #ff7f50; margin-bottom: 12px; font-weight: 700; }
+  .description { font-size: 1rem; color: #555; max-width: 700px; margin: 0 auto; }
 
-    .project-block { margin-bottom: 35px; transition: transform 0.3s; }
-    .project-block:hover { transform: translateY(-3px); }
-    .project-block h3 { font-family: 'Poppins', sans-serif; font-size: 1.55rem; margin-bottom: 12px; font-weight: 600; color: #ff758c; }
+  .project-block { margin-bottom: 35px; transition: transform 0.3s; padding: 10px; background: rgba(255,215,200,0.15); border-radius: 14px; }
+  .project-block:hover { transform: translateY(-5px) rotate(-1deg); }
+  .project-block h3 { font-family: 'Fredoka One', cursive; font-size: 1.55rem; margin-bottom: 12px; color: #ff7f50; }
 
-    /* ===== IMAGENES PROPORCIONALES ===== */
-    .project-block img {
-      width: 100%;
-      max-width: 480px; /* ligeramente más pequeñas */
-      display: block;
-      margin: 0 auto;
-      border-radius: 14px;
-      height: auto;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .project-block img:hover { transform: scale(1.02); box-shadow: 0 15px 25px rgba(0,0,0,0.1); }
+  .project-block img {
+    width: 100%;
+    max-width: 450px; 
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 20px; 
+    height: auto; 
+    transition: transform 0.4s, box-shadow 0.4s;
+    box-shadow: 0 10px 25px rgba(255,105,180,0.2);
+  }
+  .project-block img:hover { transform: scale(1.05) rotate(-1deg); box-shadow: 0 15px 35px rgba(255,105,180,0.3); }
 
-    /* ===== VIDEO RESPONSIVO ===== */
-    .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; margin-top: 10px; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; margin-top: 10px; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 25px rgba(255,105,180,0.25); }
+  .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-    /* ===== PIE DE PAGINA ===== */
-    footer {
-      text-align: center; padding: 25px 20px; border-top: 1px solid #eee; color: #555;
-      font-size: 0.95rem; font-family: 'Inter', sans-serif; background: #fff6f0;
-      letter-spacing: 0.5px;
-    }
-    footer a { color: #ff758c; text-decoration: none; transition: color 0.3s; }
-    footer a:hover { color: #ff7eb3; }
+  /* ===== PIE DE PAGINA ===== */
+  footer {
+    text-align: center; padding: 25px 20px; border-top: 2px dashed #ff9a76; color: #555; font-size: 0.95rem; background: #fff0f5;
+    letter-spacing: 0.5px; font-family: 'Comic Neue', sans-serif;
+  }
+  footer a { color: #ff6b6b; text-decoration: none; transition: color 0.3s; }
+  footer a:hover { color: #ff9a76; }
 
-  </style>
+</style>
 </head>
 <body>
 
