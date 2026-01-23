@@ -6,12 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- FUENTES -->
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
   /* ===== RESET ===== */
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Poppins', sans-serif; background: #fefcfb; color: #2c3e50; line-height: 1.6; }
+  body { font-family: 'Montserrat', sans-serif; background: #fefcfb; color: #2c3e50; line-height: 1.6; }
 
   /* ===== HOME ===== */
   #home {
@@ -21,56 +21,44 @@
     position: relative;
     overflow: hidden;
   }
-  #home::after {
-    content:"";
-    position: absolute; 
-    width: 250px; height: 250px; 
-    background: rgba(44, 62, 80,0.05); 
-    border-radius: 50%; 
-    top: -40px; left: -40px; 
-    transform: rotate(45deg);
-  }
-  .logo { width: 140px; margin-bottom: 20px; transition: transform 0.4s; }
-  .logo:hover { transform: scale(1.05); }
+  .logo { width: 140px; margin-bottom: 20px; }
 
-  h1 { font-family: 'Fredoka One', cursive; font-size: 3rem; margin-bottom: 15px; color: #1f4e5f; }
+  h1 { font-size: 3rem; margin-bottom: 15px; color: #1f4e5f; }
   .subtitle { font-size: 1.25rem; color: #34495e; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
-
-  .btn-primary {
-    display: inline-block; padding: 12px 25px; border-radius: 25px;
-    background: #2a6f6b; color: #fff; text-decoration: none; font-weight: 600; margin-top: 20px;
-    transition: background 0.3s, transform 0.3s;
-  }
-  .btn-primary:hover { background: #1f4e5f; transform: scale(1.05); }
 
   .clients-grid { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 50px; }
   .client-card {
-    cursor: pointer; flex: 1 1 240px; padding: 10px; border-radius: 20px;
+    cursor: pointer; flex: 1 1 260px; padding: 10px; border-radius: 20px;
     background: linear-gradient(135deg, #e0e7e7, #cfe3e4);
     border: 2px solid #b0c7c8; transition: transform 0.3s, box-shadow 0.3s;
   }
   .client-card:hover { transform: scale(1.03); box-shadow: 0 8px 20px rgba(44, 62, 80,0.1); }
   .client-card img { width: 100%; border-radius: 16px; margin-bottom: 10px; object-fit: cover; }
-  .client-card h2 { font-family: 'Fredoka One', cursive; font-size: 1.5rem; color: #1f4e5f; margin-bottom: 5px; }
+  .client-card h2 { font-size: 1.5rem; margin-bottom: 5px; color: #1f4e5f; }
   .client-card p { font-weight: 500; color: #34495e; }
 
   /* ===== PROYECTOS ===== */
   .project { padding: 80px 20px; background: #f9f9f9; position: relative; }
   .project-header { margin-bottom: 50px; text-align: center; }
-  .project-header h2 { font-family: 'Fredoka One', cursive; font-size: 2.2rem; color: #1f4e5f; margin-bottom: 5px; }
-  .role { color: #2a6f6b; margin-bottom: 12px; font-weight: 600; }
+  
+  /* Títulos con color según cliente */
+  #david .project-header h2 { color: #1f6fbf; }    /* azul David */
+  #camila .project-header h2 { color: #bfae8f; }   /* beige Camila */
+  #layla .project-header h2 { color: #2a7f4a; }    /* verde Layla */
+
+  .project-header h2 { font-size: 2.2rem; margin-bottom: 5px; }
+  .role { color: #34495e; margin-bottom: 12px; font-weight: 600; }
   .description { font-size: 1rem; color: #34495e; max-width: 700px; margin: 0 auto; }
 
-  .project-block { margin-bottom: 40px; padding: 15px; background: rgba(44, 111, 107,0.05); border-radius: 14px; }
-  .project-block h3 { font-family: 'Fredoka One', cursive; font-size: 1.4rem; margin-bottom: 12px; color: #2a6f6b; }
+  .project-block { margin-bottom: 40px; padding: 0; }
 
   /* ===== IMÁGENES ===== */
   .project-block img {
     display: block;
     margin: 20px auto;
-    width: auto;        /* evita que ocupe 100% */
-    max-width: 350px;   /* tamaño máximo */
-    height: auto;       /* mantiene proporción */
+    width: auto;        
+    max-width: 450px;   /* tamaño más grande */
+    height: auto;       
     border-radius: 16px;
     box-shadow: 0 6px 15px rgba(44, 62, 80,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -85,8 +73,8 @@
   .video-wrapper {
     position: relative; 
     width: 100%; 
-    max-width: 500px; 
-    padding-bottom: 56.25%; 
+    max-width: 600px; 
+    padding-bottom: 56.25%;  /* 16:9 horizontal */
     margin: 20px auto; 
     border-radius: 16px; 
     overflow: hidden; 
@@ -104,7 +92,7 @@
   /* ===== PIE DE PAGINA ===== */
   footer {
     text-align: center; padding: 40px 20px; border-top: 1px solid #b0c7c8; color: #34495e; font-size: 0.95rem; background: #f2f5f5;
-    letter-spacing: 0.5px; font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px; font-family: 'Montserrat', sans-serif;
   }
   footer a { color: #2a6f6b; text-decoration: none; transition: color 0.3s; }
   footer a:hover { color: #1f4e5f; }
@@ -125,7 +113,6 @@
   <img src="logo-maxine.png" alt="Maxine Arquitectos" class="logo">
   <h1>Maxine Arquitectos</h1>
   <p class="subtitle">Diseño de interiores. Espacios pensados desde la función, la operatividad y el bienestar.</p>
-  <a class="btn-primary" href="#camila">Ver proyectos</a>
 
   <div class="clients-grid">
     <div class="client-card" onclick="scrollToProject('camila')">
