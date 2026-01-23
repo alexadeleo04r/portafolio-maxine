@@ -66,17 +66,20 @@
 
   /* ===== IMÁGENES ===== */
   .project-block img {
-    width: 100%;
-    max-width: 350px; 
-    display: block; 
-    margin: 0 auto; 
-    border-radius: 16px; 
-    height: auto; 
-    transition: transform 0.3s, box-shadow 0.3s;
+    display: block;
+    margin: 20px auto;
+    width: auto;        /* evita que ocupe 100% */
+    max-width: 350px;   /* tamaño máximo */
+    height: auto;       /* mantiene proporción */
+    border-radius: 16px;
     box-shadow: 0 6px 15px rgba(44, 62, 80,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
     object-fit: cover;
   }
-  .project-block img:hover { transform: scale(1.03); box-shadow: 0 10px 25px rgba(44, 62, 80,0.15); }
+  .project-block img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(44, 62, 80,0.15);
+  }
 
   /* ===== VIDEOS ===== */
   .video-wrapper {
