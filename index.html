@@ -1,65 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Maxine Arquitectos · Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* ====== FUENTES MODERNAS ====== */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@500;600;700&display=swap');
+<meta charset="UTF-8">
+<title>Maxine Arquitectos · Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* ====== RESET ====== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #fff; color: #222; line-height: 1.6; font-family: 'Inter', sans-serif; }
+<style>
+  /* ===== RESET ===== */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Lato', sans-serif; background: #ffffff; color: #2c3e50; line-height: 1.6; }
 
-    /* ====== HOME ====== */
-    #home { text-align: center; padding: 60px 20px; }
-    .logo { width: 140px; margin-bottom: 20px; }
-    h1 { font-family: 'Poppins', sans-serif; font-size: 3rem; font-weight: 700; margin-bottom: 10px; }
-    .subtitle { font-size: 1.25rem; color: #555; margin-bottom: 50px; font-weight: 400; letter-spacing: 0.5px; }
+  /* ===== HOME ===== */
+  #home {
+    text-align: center; 
+    padding: 80px 20px;
+  }
+  .logo { width: 160px; margin-bottom: 20px; }
 
-    .clients-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .client-card { cursor: pointer; width: 180px; border: 1px solid #ddd; padding: 12px; border-radius: 12px; transition: transform 0.25s, box-shadow 0.25s; background: #fafafa; }
-    .client-card:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-    .client-card img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
+  h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 15px; color: #1f4e5f; }
+  .subtitle { font-size: 1.25rem; color: #34495e; margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; }
 
-    /* ====== PROYECTOS ====== */
-    .project { padding: 50px 20px; border-top: 1px solid #eee; }
-    .project-header { margin-bottom: 30px; text-align: center; }
-    .project-header h2 { font-family: 'Poppins', sans-serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 5px; }
-    .role { color: #888; margin-bottom: 12px; font-weight: 500; letter-spacing: 0.5px; }
-    .description { font-size: 1rem; color: #555; max-width: 700px; margin: 0 auto; }
+  /* ===== CLIENTES ===== */
+  .clients-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 50px; }
+  .client-card {
+    cursor: pointer; flex: 1 1 220px; padding: 10px; border-radius: 16px;
+    background: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .client-card:hover { transform: scale(1.03); }
+  .client-card img { width: 100%; max-width: 450px; border-radius: 16px; margin-bottom: 10px; object-fit: cover; }
+  .client-card h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 5px; }
+  .client-card p { font-weight: 500; color: #34495e; }
 
-    .project-block { margin-bottom: 35px; }
-    .project-block h3 { font-family: 'Poppins', sans-serif; font-size: 1.55rem; margin-bottom: 12px; font-weight: 600; color: #333; }
+  /* ===== PROYECTOS ===== */
+  .project { padding: 80px 20px; background: #f9f9f9; position: relative; }
+  .project-header { margin-bottom: 50px; text-align: center; }
+  .project-header h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 5px; }
+  .role { color: #34495e; margin-bottom: 12px; font-weight: 600; }
+  .description { font-size: 1rem; color: #34495e; max-width: 700px; margin: 0 auto; }
 
-    /* ====== IMAGENES PROPORCIONALES Y CENTRADAS ====== */
-    .project-block img {
-      width: 100%;
-      max-width: 500px; /* MÁS PEQUEÑAS */
-      display: block;
-      margin: 0 auto;
-      border-radius: 10px;
-      height: auto;
-    }
+  .project-block { margin-bottom: 40px; padding: 0; }
 
-    /* ====== VIDEO RESPONSIVO ====== */
-    .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; margin-top: 10px; border-radius: 10px; overflow: hidden; }
-    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  /* Imágenes de proyectos un poco más grandes */
+  .project-block img {
+    display: block;
+    margin: 20px auto;
+    width: auto;        
+    max-width: 480px;  /* aumento ligero */
+    height: auto;       
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(44, 62, 80,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    object-fit: cover;
+  }
+  .project-block img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(44, 62, 80,0.15);
+  }
 
-    /* ====== PIE DE PÁGINA ====== */
-    footer {
-      text-align: center;
-      padding: 25px 20px;
-      border-top: 1px solid #eee;
-      color: #555;
-      font-size: 0.95rem;
-      font-family: 'Inter', sans-serif;
-      background: #f9f9f9;
-      letter-spacing: 0.5px;
-    }
+  /* ===== VIDEOS HORIZONTALES ===== */
+  .video-wrapper {
+    position: relative; 
+    width: 100%; 
+    max-width: 600px; 
+    padding-bottom: 56.25%;  /* 16:9 horizontal */
+    margin: 20px auto; 
+    border-radius: 16px; 
+    overflow: hidden; 
+    box-shadow: 0 6px 15px rgba(44, 62, 80,0.1);
+  }
+  .video-wrapper iframe { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    border: 0; 
+  }
 
-  </style>
+  /* ===== PIE DE PÁGINA ===== */
+  footer {
+    text-align: center; padding: 40px 20px; border-top: 1px solid #b0c7c8; color: #34495e; font-size: 0.95rem; background: #f2f5f5;
+    letter-spacing: 0.5px;
+  }
+  footer a { color: #2a6f6b; text-decoration: none; transition: color 0.3s; }
+  footer a:hover { color: #1f4e5f; }
+
+  @media (max-width: 768px){
+    h1 { font-size: 2.4rem; }
+    .project-header h2 { font-size: 1.8rem; }
+    .project-block h3 { font-size: 1.3rem; }
+    .clients-grid { gap: 15px; }
+    .client-card img { max-width: 350px; }
+    .project-block img { max-width: 350px; }
+  }
+</style>
 </head>
 <body>
 
@@ -75,13 +110,11 @@
       <h2>Camila</h2>
       <p>Oficina Editorial</p>
     </div>
-
     <div class="client-card" onclick="scrollToProject('david')">
       <img src="david-hero.png" alt="Proyecto David">
       <h2>David</h2>
       <p>Centro de Comando</p>
     </div>
-
     <div class="client-card" onclick="scrollToProject('layla')">
       <img src="layla-hero.png" alt="Proyecto Layla">
       <h2>Layla</h2>
@@ -90,7 +123,7 @@
   </div>
 </section>
 
-<!-- PROYECTO CAMILA -->
+<!-- PROYECTOS -->
 <section id="camila" class="project">
   <header class="project-header">
     <h2>Camila</h2>
@@ -110,7 +143,6 @@
   </div>
 </section>
 
-<!-- PROYECTO DAVID -->
 <section id="david" class="project">
   <header class="project-header">
     <h2>David</h2>
@@ -130,7 +162,6 @@
   </div>
 </section>
 
-<!-- PROYECTO LAYLA -->
 <section id="layla" class="project">
   <header class="project-header">
     <h2>Layla</h2>
