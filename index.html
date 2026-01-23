@@ -5,47 +5,60 @@
   <title>Maxine Arquitectos · Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* ====== IMPORTAR FUENTES ====== */
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap');
+    /* ====== FUENTES MODERNAS ====== */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@500;600;700&display=swap');
 
-    /* ====== RESET BASICO ====== */
+    /* ====== RESET ====== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #fff; color: #222; line-height: 1.6; font-family: 'Roboto', sans-serif; }
+    body { background: #fff; color: #222; line-height: 1.6; font-family: 'Inter', sans-serif; }
 
     /* ====== HOME ====== */
-    #home { text-align: center; padding: 50px 20px; }
-    .logo { width: 150px; margin-bottom: 20px; }
-    h1 { font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 700; margin-bottom: 10px; }
-    .subtitle { font-size: 1.3rem; color: #555; margin-bottom: 40px; font-weight: 400; }
+    #home { text-align: center; padding: 60px 20px; }
+    .logo { width: 140px; margin-bottom: 20px; }
+    h1 { font-family: 'Poppins', sans-serif; font-size: 3rem; font-weight: 700; margin-bottom: 10px; }
+    .subtitle { font-size: 1.25rem; color: #555; margin-bottom: 50px; font-weight: 400; letter-spacing: 0.5px; }
 
     .clients-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .client-card { cursor: pointer; width: 200px; border: 1px solid #ddd; padding: 10px; border-radius: 10px; transition: transform 0.2s; font-family: 'Roboto', sans-serif; }
-    .client-card:hover { transform: scale(1.05); }
+    .client-card { cursor: pointer; width: 180px; border: 1px solid #ddd; padding: 12px; border-radius: 12px; transition: transform 0.25s, box-shadow 0.25s; background: #fafafa; }
+    .client-card:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
     .client-card img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
 
     /* ====== PROYECTOS ====== */
     .project { padding: 50px 20px; border-top: 1px solid #eee; }
     .project-header { margin-bottom: 30px; text-align: center; }
-    .project-header h2 { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 5px; }
-    .role { color: #888; margin-bottom: 10px; font-weight: 500; }
-    .description { font-size: 1rem; color: #555; }
+    .project-header h2 { font-family: 'Poppins', sans-serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 5px; }
+    .role { color: #888; margin-bottom: 12px; font-weight: 500; letter-spacing: 0.5px; }
+    .description { font-size: 1rem; color: #555; max-width: 700px; margin: 0 auto; }
 
-    .project-block { margin-bottom: 30px; }
-    .project-block h3 { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; margin-bottom: 10px; font-weight: 600; }
+    .project-block { margin-bottom: 35px; }
+    .project-block h3 { font-family: 'Poppins', sans-serif; font-size: 1.55rem; margin-bottom: 12px; font-weight: 600; color: #333; }
 
     /* ====== IMAGENES PROPORCIONALES Y CENTRADAS ====== */
     .project-block img {
-      width: 100%;          /* ocupa todo el ancho disponible del contenedor */
-      max-width: 600px;     /* nunca será más grande de 600px */
-      display: block;       /* para centrar */
-      margin: 0 auto;       /* centrado horizontal */
-      border-radius: 10px;  /* bordes redondeados */
-      height: auto;         /* mantiene la proporción */
+      width: 100%;
+      max-width: 500px; /* MÁS PEQUEÑAS */
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+      height: auto;
     }
 
     /* ====== VIDEO RESPONSIVO ====== */
     .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; margin-top: 10px; border-radius: 10px; overflow: hidden; }
     .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+    /* ====== PIE DE PÁGINA ====== */
+    footer {
+      text-align: center;
+      padding: 25px 20px;
+      border-top: 1px solid #eee;
+      color: #555;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+      letter-spacing: 0.5px;
+    }
+
   </style>
 </head>
 <body>
@@ -136,6 +149,11 @@
     </div>
   </div>
 </section>
+
+<!-- PIE DE PÁGINA -->
+<footer>
+  Contacto: Alexandra de León | +507 66825308 | Email: <a href="mailto:alexandradeleonr@gmail.com">alexandradeleonr@gmail.com</a>
+</footer>
 
 <script>
   function scrollToProject(id) {
